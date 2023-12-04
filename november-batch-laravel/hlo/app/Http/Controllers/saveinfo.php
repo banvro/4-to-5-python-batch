@@ -13,6 +13,13 @@ class saveinfo extends Controller
             "email" => "required|email",
             "desc" => "required"
         ]);
-        echo "form submitted sucessfully";
+
+        $nam = $request -> input("name");
+        $emil = $request -> input("email");
+        $msg = $request -> input("desc");
+
+
+
+        echo "user ented name is : $nam and emial is $emil and message is : $msg";
     }
 }
