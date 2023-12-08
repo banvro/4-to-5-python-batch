@@ -19,3 +19,14 @@ Route::get('/', function () {
 
 
 Route::get("/showdata", "App\Http\Controllers\CarController@show");
+
+
+
+
+Route::get("/show", "App\Http\Controllers\LeanQueryBuilder@showdata");
+
+Route::get("/insert", "App\Http\Controllers\LeanQueryBuilder@insertdata");
+
+Route::get("/update", "App\Http\Controllers\LeanQueryBuilder@updatedata");
+
+Route::get("/delete", "App\Http\Controllers\LeanQueryBuilder@deletedata");
