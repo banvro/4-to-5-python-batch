@@ -25,7 +25,13 @@
                         <h5 class="card-title">User Name : {{$data->name}}</h5>
                         <h5 class="card-title">User Email : {{$data->emial}}</h5>
                         <p class="card-text">User Added On : {{$data->created_at}}.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        
+                        <div>
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <a href="/deletedata/{{$data->id}}"><button type="submit" class="btn btn-danger">Delete</button></a>
+
+                        </div>
+
                     </div>
                 </div>
             </div>

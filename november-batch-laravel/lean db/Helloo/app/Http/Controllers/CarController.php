@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
+use App\Models\Car; 
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -20,7 +20,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view("addRecord");
     }
 
     /**
@@ -28,7 +28,15 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nm = $request->input("name");
+        $em = $request->input("email");
+        
+        $resp = new Car;
+        $resp->name = $nm;
+        $resp->emial = $em;
+        $resp->save();
+
+        return redirect("showdata");
     }
 
     /**
@@ -58,8 +66,9 @@ class CarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Car $car)
-    {
-        //
+    public function destroy(Car $car, $id)
+    {   
+        Car::destroy(array('id', $id));
+        return redirect("/showdata");
     }
 }

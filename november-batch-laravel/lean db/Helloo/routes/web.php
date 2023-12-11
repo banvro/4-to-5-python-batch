@@ -22,6 +22,25 @@ Route::get("/showdata", "App\Http\Controllers\CarController@show");
 
 
 
+Route::get("/deletedata/{id}", "App\Http\Controllers\CarController@destroy");
+
+
+Route::get("/record", "App\Http\Controllers\CarController@create");
+
+Route::post("/savedata", "App\Http\Controllers\CarController@store");
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get("/show", "App\Http\Controllers\LeanQueryBuilder@showdata");
 
