@@ -50,17 +50,26 @@ class CarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Car $car)
+    public function edit(Car $car, $id)
     {
-        //
+        // echo "$id";
+        return view("updatedata")->with("record", Car::find($id));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Car $car)
+    public function update(Request $request, Car $car, $id)
     {
-        //
+        $nm = $request->input("name");
+        $em = $request->input("email");
+
+        $resp = Car::find($id);
+        $resp->name = $nm;
+        $resp->emial = $em;
+        $resp->save();
+
+        return redirect("/showdata");
     }
 
     /**

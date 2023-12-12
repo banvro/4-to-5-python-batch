@@ -27,7 +27,7 @@
                         <p class="card-text">User Added On : {{$data->created_at}}.</p>
                         
                         <div>
-                            <button type="submit" class="btn btn-success">Update</button>
+                            <a href="/updatedata/{{$data->id}}"><button type="submit" class="btn btn-success">Update</button></a>
                             <a href="/deletedata/{{$data->id}}"><button type="submit" class="btn btn-danger">Delete</button></a>
 
                         </div>

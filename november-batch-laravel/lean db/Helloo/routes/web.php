@@ -29,6 +29,10 @@ Route::get("/record", "App\Http\Controllers\CarController@create");
 
 Route::post("/savedata", "App\Http\Controllers\CarController@store");
 
+Route::get("/updatedata/{x}", "App\Http\Controllers\CarController@edit");
+
+Route::post("/updatethis/{x}", "App\Http\Controllers\CarController@update");
+
 
 
 
