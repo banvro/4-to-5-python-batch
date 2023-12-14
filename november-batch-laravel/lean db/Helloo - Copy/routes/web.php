@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
+/* 
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -18,11 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::view("/home", "home");
-Route::view("/contact", "contact");
-
-
-Route::POST("/save-info-url", "App\Http\Controllers\saveinfo@hlo");
-
 Route::get("/showdata", "App\Http\Controllers\CarController@show");
-Route::get("/deletedata/{id}", "App\Http\Controllers\CarController@destroy");
+
+
+Route::get("/get", "App\Http\Controllers\hey@get");
