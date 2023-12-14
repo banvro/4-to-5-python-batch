@@ -18,5 +18,7 @@ Route::get('/home', function () {
 });
 
 
-Route::view("/", "title");
+Route::get("/", "App\Http\Controllers\TodoController@create");
+Route::post("/save", "App\Http\Controllers\TodoController@store");
+Route::get("/show", "App\Http\Controllers\TodoController@show");
 

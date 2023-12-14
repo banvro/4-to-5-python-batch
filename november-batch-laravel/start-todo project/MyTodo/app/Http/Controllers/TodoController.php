@@ -20,7 +20,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        
+        return view("title")->with("myalltodos", todo::all());
     }
 
     /**
@@ -28,7 +28,16 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $titl = $request->input("title");
+        $msg = $request->input("des");
+
+        // echo "$titl $msg";
+        $resp = new todo;
+        $resp->title = $titl;
+        $resp->Decs = $msg;
+        $resp->save();
+
+        return redirect("/");
     }
 
     /**
@@ -36,7 +45,7 @@ class TodoController extends Controller
      */
     public function show(todo $todo)
     {
-        //
+        return view("title")->with("myalltodos", todo::all());
     }
 
     /**
