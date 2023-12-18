@@ -32,3 +32,14 @@ Route::post("/updatenow/{xyz}", "App\Http\Controllers\TodoController@update");
 // 1) File Uploading 
 // 2) Session 
 // 3) Middleware 
+
+
+// session stroge 
+
+Route::get("/set_session", "App\Http\Controllers\Learnsessionstorage@set_session");
+
+Route::get("/get_session", "App\Http\Controllers\Learnsessionstorage@get_session");
+
+Route::get("/rmeove_session", "App\Http\Controllers\Learnsessionstorage@rmeove_session");
+
+Route::get("/check_session", "App\Http\Controllers\Learnsessionstorage@check_session");
