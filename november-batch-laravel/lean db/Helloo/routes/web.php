@@ -25,7 +25,7 @@ Route::get("/showdata", "App\Http\Controllers\CarController@show");
 Route::get("/deletedata/{id}", "App\Http\Controllers\CarController@destroy");
 
 
-Route::get("/record", "App\Http\Controllers\CarController@create");
+Route::get("/record", "App\Http\Controllers\CarController@create")->middleware('Usercheck');
 
 Route::post("/savedata", "App\Http\Controllers\CarController@store");
 
@@ -34,6 +34,8 @@ Route::get("/updatedata/{x}", "App\Http\Controllers\CarController@edit");
 Route::post("/updatethis/{x}", "App\Http\Controllers\CarController@update");
 
 
+
+Route::view("/denide", "denide");
 
 
 
