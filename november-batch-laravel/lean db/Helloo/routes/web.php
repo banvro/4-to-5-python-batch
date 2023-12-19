@@ -18,14 +18,16 @@ Route::get('/', function () {
 });
 
 
-Route::get("/showdata", "App\Http\Controllers\CarController@show");
 
 
 
 Route::get("/deletedata/{id}", "App\Http\Controllers\CarController@destroy");
 
 
-Route::get("/record", "App\Http\Controllers\CarController@create")->middleware('Usercheck');
+Route::get("/record", "App\Http\Controllers\CarController@create");
+
+
+// Route::get("/record", "App\Http\Controllers\CarController@create")->middleware('Usercheck');
 
 Route::post("/savedata", "App\Http\Controllers\CarController@store");
 
@@ -38,7 +40,11 @@ Route::post("/updatethis/{x}", "App\Http\Controllers\CarController@update");
 Route::view("/denide", "denide");
 
 
+Route::group(['middleware'=>['Usercheck']],function(){
+    Route::get("/record", "App\Http\Controllers\CarController@create");
+    Route::get("/showdata", "App\Http\Controllers\CarController@show");
 
+});
 
 
 
